@@ -1,3 +1,8 @@
+/*
+	Kristen Patterson & Adam Rucker
+	3/16/2017
+	Lab 8/  Maze Recursion Lab
+*/	
 #include "Maze.h"
 #include "Color.h"
 #include "Rect.h"
@@ -56,7 +61,7 @@ bool Maze::traverse(int row, int col)
       int height = maze->getNumRows();
       int width = maze->getNumCols();
 
-      if (row == height && col == width)
+      if (row == height && col == width)//if row == height and col == width then the maze is at the end and complete
       {
          done = true;
       }
@@ -70,10 +75,10 @@ bool Maze::traverse(int row, int col)
          //IMPORTANT!!
          //don't use row++ or column++ use row + 1 or col + 1, etc.
          //IMPORTANT: make use of the boolean that is returned every time you call traverse
-		done = traverse(row + 1, col);
+		done = traverse(row + 1, col);//check to see if adding one to the row solves it
 		
-		if(!done)
-			done = traverse(row, col-1);
+		if(!done)//check to see if it is done already
+			done = traverse(row, col-1);//add 1 to col to test it
 		if(!done)
 			done = traverse(row-1, col);
 		if(!done)
