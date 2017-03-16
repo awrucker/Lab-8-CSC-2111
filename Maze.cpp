@@ -39,12 +39,12 @@ bool Maze::traverse(int row, int col)
 
    //DO THIS
    //test that the current grid location is a space (i.e. not a wall or already tried)
-   if (                                   )
+   if (maze->getElement(row, col) == SPACE)
    {
 
       //DO THIS
       //now it has been tried so mark it as tried
-
+	  maze->setElement(row, col, TRIED);
 
 
 
@@ -56,7 +56,7 @@ bool Maze::traverse(int row, int col)
       int height = maze->getNumRows();
       int width = maze->getNumCols();
 
-      if (                     )
+      if (row == height && col == width)
       {
          done = true;
       }
