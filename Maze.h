@@ -6,7 +6,6 @@ using CSC2110::Matrix;
 #include "Drawable.h"
 #include "Update.h"
 
-
 class Maze : public Drawable
 {
    private:
@@ -25,7 +24,7 @@ class Maze : public Drawable
       Maze(Matrix* mz);
       virtual ~Maze();
       bool solve();
-      virtual void draw(Cairo::RefPtr<Cairo::Context> cr, int width, int height);
+      virtual void draw(wxDC& dc, int width, int height);
       virtual void mouseClicked(int x, int y);
       void addListener(Update* gui);
 };
